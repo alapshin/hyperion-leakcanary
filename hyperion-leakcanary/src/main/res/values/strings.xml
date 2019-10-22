@@ -1,0 +1,4 @@
+<resources>
+    <string name="hyperion_leakcanary_plugin_name">LeakCanary</string>
+    <string name="hyperion_leakcanary_plugin_description">Tap to activate memory leak detection using LeakCanary</string>
+</resources>
