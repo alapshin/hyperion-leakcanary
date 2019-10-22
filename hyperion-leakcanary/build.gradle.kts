@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("maven-publish")
     id("com.android.library")
@@ -34,6 +37,7 @@ android {
 
 afterEvaluate {
     publishing {
+
         publications {
             create<MavenPublication>("release") {
                 version = "0.1.0"
@@ -42,5 +46,23 @@ afterEvaluate {
                 from(components.getByName("release"))
             }
         }
+
+        repositories {
+            maven {
+                name = "Github"
+                url = uri("https://maven.pkg.github.com/alapshin/hyperion-leakcanary")
+                val props = Properties().apply {
+                    val file = rootProject.file("publishing.properties")
+                    if (file.exists()) {
+                        load(FileInputStream(file))
+                    }
+                }
+                credentials {
+                    username = props["gpr.user"] as String? ?: System.getenv("GPR_USER")
+                    password = props["gpr.key"] as String? ?: System.getenv("GPR_API_KEY")
+                }
+            }
+        }
+
     }
 }
