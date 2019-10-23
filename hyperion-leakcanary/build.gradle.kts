@@ -8,6 +8,9 @@ plugins {
     id("org.jetbrains.kotlin.kapt")
 }
 
+group = "com.alapshin.hyperion"
+version = "0.1.1"
+
 android {
     compileSdkVersion(Versions.compileSdk)
 
@@ -40,9 +43,6 @@ afterEvaluate {
 
         publications {
             create<MavenPublication>("release") {
-                version = "0.1.0"
-                groupId = "com.alapshin.hyperion"
-                artifactId = "hyperion-leakcanary"
                 from(components.getByName("release"))
             }
         }
