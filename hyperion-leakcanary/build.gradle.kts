@@ -38,15 +38,19 @@ android {
     }
 }
 
+tasks.register<Jar>("sourcesJar") {
+    archiveClassifier.set("sources")
+    from(android.sourceSets.getByName("main").java.srcDirs)
+}
+
 afterEvaluate {
     publishing {
-
         publications {
             create<MavenPublication>("release") {
+                artifact(tasks["sourcesJar"])
                 from(components.getByName("release"))
             }
         }
-
         repositories {
             maven {
                 name = "Github"
