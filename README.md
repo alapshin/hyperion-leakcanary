@@ -1,4 +1,4 @@
-# Hyperion Leakcanary
+# Hyperion LeakCanary
 
 [Hyperion-Android][1] plugin that allows to toggle [LeakCanary][2] in runtime
 
