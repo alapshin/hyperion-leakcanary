@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.alapshin.hyperion"
-version = "0.1.1"
+version = "0.1.2"
 
 android {
     compileSdkVersion(Versions.compileSdk)

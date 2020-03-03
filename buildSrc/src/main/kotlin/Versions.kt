@@ -4,5 +4,5 @@ object Versions {
     const val targetSdk = 29
 
     const val hyperion = "0.9.27"
-    const val kotlin = "1.3.50"
+    const val kotlin = "1.3.61"
 }
