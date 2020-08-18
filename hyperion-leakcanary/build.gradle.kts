@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "com.alapshin.hyperion"
-version = "0.1.2"
+version = "0.1.3"
 
 android {
     compileSdkVersion(Versions.compileSdk)
@@ -31,10 +31,9 @@ android {
     }
 
     dependencies {
+        kapt(Libraries.autoservice)
         implementation(Libraries.hyperioncore)
         implementation(Libraries.leakcanary)
-        implementation(Libraries.kotlinstdlib)
-        kapt(Libraries.autoservice)
     }
 }
 
